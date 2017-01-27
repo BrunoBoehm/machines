@@ -1,0 +1,57 @@
+<%= form_for(@brand) do |f| %>
+  <% if @brand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+
+      <ul>
+      <% @brand.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug %>
+  </div>
+  <div class="field">
+    <%= f.label :site_url %><br>
+    <%= f.text_field :site_url %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook_url %><br>
+    <%= f.text_field :facebook_url %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter_url %><br>
+    <%= f.text_field :twitter_url %>
+  </div>
+  <div class="field">
+    <%= f.label :linkedin_url %><br>
+    <%= f.text_field :linkedin_url %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :img %><br>
+    <%= f.text_field :img %>
+  </div>
+  <div class="field">
+    <%= f.label :seo_text %><br>
+    <%= f.text_field :seo_text %>
+  </div>
+  <div class="field">
+    <%= f.label :seo_keywords %><br>
+    <%= f.text_field :seo_keywords %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

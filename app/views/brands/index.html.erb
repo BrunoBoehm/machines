@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Brands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Site url</th>
+      <th>Facebook url</th>
+      <th>Twitter url</th>
+      <th>Linkedin url</th>
+      <th>Description</th>
+      <th>Img</th>
+      <th>Seo text</th>
+      <th>Seo keywords</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <td><%= brand.name %></td>
+        <td><%= brand.slug %></td>
+        <td><%= brand.site_url %></td>
+        <td><%= brand.facebook_url %></td>
+        <td><%= brand.twitter_url %></td>
+        <td><%= brand.linkedin_url %></td>
+        <td><%= brand.description %></td>
+        <td><%= brand.img %></td>
+        <td><%= brand.seo_text %></td>
+        <td><%= brand.seo_keywords %></td>
+        <td><%= link_to 'Show', brand %></td>
+        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
+        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Brand', new_brand_path %>

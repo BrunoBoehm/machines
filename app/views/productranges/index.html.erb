@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Productranges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Description</th>
+      <th>Imgs</th>
+      <th>Seo text</th>
+      <th>Seo keywords</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productranges.each do |productrange| %>
+      <tr>
+        <td><%= productrange.name %></td>
+        <td><%= productrange.slug %></td>
+        <td><%= productrange.description %></td>
+        <td><%= productrange.imgs %></td>
+        <td><%= productrange.seo_text %></td>
+        <td><%= productrange.seo_keywords %></td>
+        <td><%= link_to 'Show', productrange %></td>
+        <td><%= link_to 'Edit', edit_productrange_path(productrange) %></td>
+        <td><%= link_to 'Destroy', productrange, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Productrange', new_productrange_path %>

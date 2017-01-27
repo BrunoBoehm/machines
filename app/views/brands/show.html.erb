@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @brand.name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @brand.slug %>
+</p>
+
+<p>
+  <strong>Site url:</strong>
+  <%= @brand.site_url %>
+</p>
+
+<p>
+  <strong>Facebook url:</strong>
+  <%= @brand.facebook_url %>
+</p>
+
+<p>
+  <strong>Twitter url:</strong>
+  <%= @brand.twitter_url %>
+</p>
+
+<p>
+  <strong>Linkedin url:</strong>
+  <%= @brand.linkedin_url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @brand.description %>
+</p>
+
+<p>
+  <strong>Img:</strong>
+  <%= @brand.img %>
+</p>
+
+<p>
+  <strong>Seo text:</strong>
+  <%= @brand.seo_text %>
+</p>
+
+<p>
+  <strong>Seo keywords:</strong>
+  <%= @brand.seo_keywords %>
+</p>
+
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', brands_path %>

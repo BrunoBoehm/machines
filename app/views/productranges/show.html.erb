@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @productrange.name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @productrange.slug %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @productrange.description %>
+</p>
+
+<p>
+  <strong>Imgs:</strong>
+  <%= @productrange.imgs %>
+</p>
+
+<p>
+  <strong>Seo text:</strong>
+  <%= @productrange.seo_text %>
+</p>
+
+<p>
+  <strong>Seo keywords:</strong>
+  <%= @productrange.seo_keywords %>
+</p>
+
+<%= link_to 'Edit', edit_productrange_path(@productrange) %> |
+<%= link_to 'Back', productranges_path %>

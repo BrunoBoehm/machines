@@ -1,0 +1,45 @@
+<%= form_for(@productrange) do |f| %>
+  <% if @productrange.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@productrange.errors.count, "error") %> prohibited this productrange from being saved:</h2>
+
+      <ul>
+      <% @productrange.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <p>Quelle sous-catégorie ?</p>
+    <%= f.collection_select :sub_category_id, SubCategory.order(:name), :id, :name, include_blank: "Choisir sous-catégorie" %>
+  </div>  
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :imgs %><br>
+    <%= f.text_area :imgs %>
+  </div>
+  <div class="field">
+    <%= f.label :seo_text %><br>
+    <%= f.text_area :seo_text %>
+  </div>
+  <div class="field">
+    <%= f.label :seo_keywords %><br>
+    <%= f.text_area :seo_keywords %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

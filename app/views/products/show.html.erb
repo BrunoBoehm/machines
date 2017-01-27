@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @product.slug %>
+</p>
+
+<p>
+  <strong>Imgs:</strong>
+  <%= @product.imgs %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @product.short_description %>
+</p>
+
+<p>
+  <strong>Long description:</strong>
+  <%= @product.long_description %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @product.material %>
+</p>
+
+<p>
+  <strong>Specs:</strong>
+  <%= @product.specs %>
+</p>
+
+<p>
+  <strong>Options:</strong>
+  <%= @product.options %>
+</p>
+
+<p>
+  <strong>Video links:</strong>
+  <%= @product.video_links %>
+</p>
+
+<p>
+  <strong>Tip:</strong>
+  <%= @product.tip %>
+</p>
+
+<p>
+  <strong>Pdfs:</strong>
+  <%= @product.pdfs %>
+</p>
+
+<p>
+  <strong>Seo text:</strong>
+  <%= @product.seo_text %>
+</p>
+
+<p>
+  <strong>Seo keywords:</strong>
+  <%= @product.seo_keywords %>
+</p>
+
+<p>
+  <strong>Links:</strong>
+  <%= @product.links %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

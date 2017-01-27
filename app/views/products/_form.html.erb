@@ -1,0 +1,77 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group input-group-lg">
+    <%= f.label :name, class: "input-group-addon" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Nom complet de la machine" %>
+  </div>
+  <div class="input-group">
+    <p>A quelle gamme appartient cette machine?</p>
+    <%= f.collection_select :productrange_id, Productrange.order(:name), :id, :name, include_blank: "Choisir gamme" %>
+  </div>
+  <div class="input-group">
+    <%= f.label :slug, class: "input-group-addon" %>
+    <%= f.text_field :slug, class: "form-control", placeholder: "nom-machine-avec-tirets" %>
+  </div>
+  <div class="input-group">
+    <%= f.label "Images", class: "input-group-addon" %>
+    <%= f.text_area :imgs, class: "form-control", placeholder: "Entrer 1 lien d'image (clic droit + copier l'adresse de l'image sous) par ligne" %>
+  </div>
+  <div class="input-group">
+    <%= f.label "Description Courte", class: "input-group-addon" %>
+    <%= f.text_area :short_description, class: "form-control", rows: "3" %>
+  </div>
+  <div class="input-group">
+    <%= f.label "Description Longue", class: "input-group-addon" %>
+    <%= f.text_area :long_description, class: "form-control editor", rows: "20" %>
+  </div>
+  <div class="input-group">
+    <%= f.label "Materiau", class: "input-group-addon"  %>
+    <%= f.text_field :material, class: "form-control", placeholder: "Acier, Inox, Alu ?" %>
+  </div>
+  <div class="input-group">
+    <%= f.label "Spécificités Techniques", class: "input-group-addon" %>
+    <%= f.text_area :specs, class: "form-control", rows: "10", placeholder: "Dim. du ruban : 2950 x 27 x 0,9 mm\nVitesse m/min : 36 / 72\nOuverture de l’étau : 285 mm\nPoids : 440 kg" %>
+  </div>
+  <div class="input-group">
+    <%= f.label :options, class: "input-group-addon" %>
+    <%= f.text_area :options, class: "form-control", class: "form-control", rows: "3", placeholder: "Options disponibles pour machine" %>
+  </div>
+  <div class="input-group">
+    <%= f.label :video_links, class: "input-group-addon" %>
+    <%= f.text_area :video_links, class: "form-control", placeholder: "Un lien par ligne" %>
+  </div>
+  <div class="input-group">
+    <%= f.label :tip, class: "input-group-addon" %>
+    <%= f.text_area :tip, class: "form-control", placeholder: "Conseil de Yann et son equipe" %>
+  </div>
+  <div class="input-group">
+    <%= f.label :pdfs, class: "input-group-addon" %>
+    <%= f.text_field :pdfs, class: "form-control", placeholder: "Virgule entre chaque lien" %>
+  </div>
+  <div class="input-group">
+    <%= f.label "SEO meta-description", class: "input-group-addon" %>
+    <%= f.text_area :seo_text, class: "form-control", placeholder: "Sera defini par Bruno", rows: "3" %>
+  </div>
+  <div class="input-group">
+    <%= f.label "SEO meta-keywords", class: "input-group-addon" %>
+    <%= f.text_field :seo_keywords, class: "form-control", placeholder: "Sera defini par Bruno" %>
+  </div>
+  <div class="input-group">
+    <%= f.label :links, class: "input-group-addon" %>
+    <%= f.text_area :links, class: "form-control", placeholder: "Liens des references pour faire cette fiche machine. Un lien par ligne", rows: "6" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Creer fiche machine", class: "btn btn-success" %>
+  </div>
+<% end %>

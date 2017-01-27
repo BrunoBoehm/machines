@@ -1,0 +1,1 @@
+json.array! @productranges, partial: 'productranges/productrange', as: :productrange
