@@ -13,3 +13,19 @@ td, th {
 thead {
 	background-color: #f5f5f5;
 }
+
+.product-blurb {
+	border: 1px solid #eaeaea;
+    box-shadow: 2px 2px 7px #dcdcdc;
+}
+
+
+.img-blurb {
+	height: 240px;
+	max-width: 100%;
+	object-fit: cover;
+}
+
+img[class] { 
+  width: 100%;
+}

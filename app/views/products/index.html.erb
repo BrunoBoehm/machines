@@ -1,6 +1,49 @@
+<div class="jumbotron">
+  <h1><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> The Machine Factory</h1>
+  <p>Une 20aine de fiches de machines à compléter, pour faire mieux que ce qui est ailleurs sur internet.</p>
+  <p><%= link_to "Voir les machines", products_path, class: "btn btn-primary btn-lg" %></a></p>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Products</h1>
+<iframe class="pull-right" src="//giphy.com/embed/3o6ZtamI9KcqLEhTY4" width="480" height="462" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<h3>Comment procéder?</h3>
+<p>1. Regarder les machines créées dans <%= link_to "Salle des Machines", products_path %></p>
+<p>2. Remplir chaque field, en essayant de rassembler le plus d'info possible (ne pas se soucier de la rédaction ou de la synthétisation de l'info, ça viendra après).</p>
+<p>La liste des sites où trouver des ressources:</p>
+<ul>
+  <li><a href="mepsaws.com">MEP</a></li>
+  <li><a href="bsz-stiftung.ch">Mecan Europa</a></li>
+  <li><a href="http://kewema.de/blechbearbeitung/mubea-systeme/kombinierte-hydr-profilstahlschere-mit-lochstanze-1-zylinder/2-miw-400-175">Mubea</a></li>
+  <li><a href="http://www.sahinlermetal.com/en/product/117/hydraulic-steelworkers/hkm-85">Sahinler</a></li>
+  <li><a href="http://www.machine-metal.com/constructeur/durma/cisailles-mecaniques-durma-ms/">Durma</a></li>
+  <li><a href="http://durmazlar.com.tr/products/press-brakes/pbf-press-brake">Durma</a></li>
+  <li><a href="http://www.machine-metal.com/constructeur/durma/cisailles-mecaniques-durma-ms/">Durma</a></li>
+  <li><a href="https://safandarley.com/products/shears/m-shear">Safan Darley</a></li>
+  <li><a href="spiegel.ch">Safan Darley</a></li>
+  <li><a href="http://www.jccolombo.com/">Combi</a></li>
+  <li><a href="http://adriaticaindustriale.it/">Atriatica</a></li>
+  <li>Google...</li>
+</ul>
+<p>3. Bon courage ;)</p>
+
+<div class="clearfix"></div>
+
+<h2>Toutes les machines</h2>
+<div class="row text-center">
+  <% @products.each do |product| %>
+    <div class="col-md-4">
+        <div class="product-blurb">
+          <%= image_tag(product.image, class: "img-blurb") %>
+          <h4><%= product.name %></h4>
+          <p><%= truncate product.short_description %></p>
+          <p><%= link_to "Voir Plus", product_path(product) %></p>
+        </div>
+    </div>
+  <% end %>
+</div>
+
+<h2>Tableau des machines</h2>
 
 <table>
   <thead>
