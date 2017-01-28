@@ -41,7 +41,7 @@
   </div>
   <div class="input-group">
     <%= f.label "Spécificités Techniques", class: "input-group-addon" %>
-    <%= f.text_area :specs, class: "form-control", rows: "10", placeholder: "Dim. du ruban : 2950 x 27 x 0,9 mm\nVitesse m/min : 36 / 72\nOuverture de l’étau : 285 mm\nPoids : 440 kg" %>
+    <%= f.text_area :specs, class: "form-control editor", rows: "10", placeholder: "Dim. du ruban : 2950 x 27 x 0,9 mm\nVitesse m/min : 36 / 72\nOuverture de l’étau : 285 mm\nPoids : 440 kg" %>
   </div>
   <div class="input-group">
     <%= f.label :options, class: "input-group-addon" %>
@@ -49,7 +49,7 @@
   </div>
   <div class="input-group">
     <%= f.label :video_links, class: "input-group-addon" %>
-    <%= f.text_area :video_links, class: "form-control", placeholder: "Un lien par ligne" %>
+    <%= f.text_area :video_links, class: "form-control", placeholder: "Liens Youtube, un lien par ligne" %>
   </div>
   <div class="input-group">
     <%= f.label :tip, class: "input-group-addon" %>

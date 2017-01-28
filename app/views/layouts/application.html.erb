@@ -5,24 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-	<script>
-		tinymce.init({ 
-	      selector:'textarea.editor',
-	      menubar: false,
-	      plugins: [
-	      'autolink lists link preview',
-	      'table contextmenu paste code'
-	      ],
-	      statusbar: false,
-	      style_formats: [
-	        {title: "Bold", icon: "bold", format: "bold"},
-	        {title: "Italic", icon: "italic", format: "italic"},
-	        {title: "Blockquote", format: "blockquote"}
-	      ],
-	      toolbar: 'removeformat undo redo preview code | styleselect bold italic table | bullist numlist outdent indent | link'
-	    });
-	</script>    
+	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>    
 </head>
 <body>
 
@@ -57,5 +40,22 @@
 		<%= yield %>
 	</div>
 
+<script>
+	tinymce.init({ 
+      selector:'textarea.editor',
+      menubar: false,
+      plugins: [
+      'autolink lists link preview',
+      'table contextmenu paste code'
+      ],
+      statusbar: false,
+      style_formats: [
+        {title: "Bold", icon: "bold", format: "bold"},
+        {title: "Italic", icon: "italic", format: "italic"},
+        {title: "Blockquote", format: "blockquote"}
+      ],
+      toolbar: 'removeformat undo redo preview code | styleselect bold italic table | bullist numlist outdent indent | link'
+    });
+</script>
 </body>
 </html>

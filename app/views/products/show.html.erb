@@ -2,9 +2,9 @@
 <p id="notice"><%= notice %></p>
 
 <ol class="breadcrumb">
-  <li>Sous Catégorie: <%= link_to @product.productrange.sub_category.name %></li>
-  <li>Marque: <%= link_to @product.productrange.brand.name %></li>
-  <li>Gamme: <%= link_to @product.productrange.name %></li>
+  <li>Sous Catégorie: <%= link_to @product.productrange.sub_category.name if @product.productrange %></li>
+  <li>Marque: <%= link_to @product.productrange.brand.name if @product.productrange %></li>
+  <li>Gamme: <%= link_to @product.productrange.name if @product.productrange %></li>
   <li class="active"><%= @product.name %></li>
 </ol>
 
@@ -101,3 +101,5 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+
