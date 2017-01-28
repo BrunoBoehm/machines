@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127143235) do
+ActiveRecord::Schema.define(version: 20170128142309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 20170127143235) do
     t.text     "imgs"
     t.text     "seo_text"
     t.text     "seo_keywords"
-    t.string   "sub_category_id"
-    t.string   "brand_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "brand_id"
+    t.integer  "sub_category_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -69,9 +69,9 @@ ActiveRecord::Schema.define(version: 20170127143235) do
     t.text     "seo_text"
     t.text     "seo_keywords"
     t.text     "links"
-    t.string   "productrange_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "productrange_id"
   end
 
   create_table "sub_categories", force: :cascade do |t|
@@ -80,9 +80,9 @@ ActiveRecord::Schema.define(version: 20170127143235) do
     t.text     "description"
     t.text     "seo_text"
     t.text     "seo_keywords"
-    t.string   "category_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "category_id"
   end
 
 end

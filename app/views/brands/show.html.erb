@@ -52,3 +52,8 @@
 
 <%= link_to 'Edit', edit_brand_path(@brand) %> |
 <%= link_to 'Back', brands_path %>
+
+<br>
+<hr>
+<h2>Machines de la marque <%= @brand.name %></h2>
+<%= render partial: "shared/products", locals: {products: @brand.products} %>
