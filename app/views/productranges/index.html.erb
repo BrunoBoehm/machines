@@ -20,8 +20,8 @@
   <tbody>
     <% @productranges.each do |productrange| %>
       <tr>
-        <td><%= productrange.sub_category.name %></td>
-        <td><%= productrange.brand.name %></td>
+        <td><%= productrange.sub_category.name if productrange.sub_category %></td>
+        <td><%= productrange.brand.name if productrange.brand %></td>
         <td><%= productrange.name %></td>
         <td><%= productrange.slug %></td>
         <td><%= productrange.description %></td>
