@@ -48,3 +48,9 @@ img[class] {
 .btn-group {
 	margin: 10px 0;
 }
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 200; 
+}

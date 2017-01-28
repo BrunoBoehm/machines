@@ -1,11 +1,11 @@
 module ProductsHelper
 	def image(product)
-		src = product.imgs.split("\r\n").select{ |x| x.match('.jpg' || '.png' || '.jpeg' ) }.first
+		src = product.imgs.split("\r\n").select{ |x| x.match(/(\.jpg|\.png|\.jpeg)$/i) }.first
 		src || "http://placekitten.com/500/400"
 	end
 
 	def images(product)
-		product.imgs.split("\r\n").select{ |x| x.match('.jpg' || '.png' || '.jpeg' ) }
+		product.imgs.split("\r\n").select{ |x| x.match(/(\.jpg|\.png|\.jpeg)$/i) }
 	end
 
 	def completion(product)

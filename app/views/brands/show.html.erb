@@ -1,5 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<h2><%= @brand.name %></h2>
+
+<div class="row">
+  <% images(@brand).each do |link| %>
+    <div class="col-xs-6 col-md-3">
+      <div class="thumbnail">
+        <a href="<%= link %>" target="_blank">
+          <img src="<%= link %>" alt="<%= link %>">
+        </a>
+        <div class="caption">
+          <p><a href="<%= link %>" target="_blank"><%= truncate link %></a></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 <p>
   <strong>Name:</strong>
   <%= @brand.name %>
