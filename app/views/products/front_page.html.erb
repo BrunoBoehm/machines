@@ -8,8 +8,13 @@
 
 <iframe class="pull-right" src="//giphy.com/embed/3o6ZtamI9KcqLEhTY4" width="480" height="462" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 <h3>Comment procéder?</h3>
-<p>1. Regarder les machines créées dans <%= link_to "Salle des Machines", products_path %></p>
-<p>2. Remplir chaque field, en essayant de rassembler le plus d'info possible (ne pas se soucier de la rédaction ou de la synthétisation de l'info, ça viendra après).</p>
+<p>1. Regarder les machines créées dans <%= link_to "Salle des Machines", products_path %>, et on se répartit selon leur numérotation</p>
+<ul>
+  <li>Noemi: #1-10</li>
+  <li>Bruno: #11-20</li>
+  <li>Dad: #21-30</li>
+</ul>
+<p>2. Remplir chaque field, en essayant de rassembler le plus d'info possible en langue FR (ne pas se soucier de la rédaction ou de la synthétisation de l'info, ça viendra après, juste faire des copy-paste).</p>
 <p>La liste des sites où trouver des ressources:</p>
 <ul>
   <li><a href="mepsaws.com">MEP</a></li>
@@ -23,11 +28,11 @@
   <li><a href="spiegel.ch">Safan Darley</a></li>
   <li><a href="http://www.jccolombo.com/">Combi</a></li>
   <li><a href="http://adriaticaindustriale.it/">Atriatica</a></li>
-  <li>Google...</li>
+  <li>Et surtout aller regarder sur Google et google images...</li>
 </ul>
 <p>3. Bon courage ;)</p>
 
 <div class="clearfix"></div>
-<br><br><br>
+<br>
 <hr>
 <%= render partial: "shared/products", locals: {products: @products}  %>
