@@ -29,3 +29,16 @@ thead {
 img[class] { 
   width: 100%;
 }
+
+@keyframes logo_anim {
+    0%  {color: yellow;}
+    100%  {color: orange;}
+}
+
+.navbar-brand .glyphicon-flash {
+    animation-name: logo_anim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+}

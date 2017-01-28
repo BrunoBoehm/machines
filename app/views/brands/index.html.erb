@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Brands</h1>
+<h1>Toutes les marques</h1>
 
 <table>
   <thead>
@@ -12,7 +12,7 @@
       <th>Twitter url</th>
       <th>Linkedin url</th>
       <th>Description</th>
-      <th>Img</th>
+      <th>Imgs</th>
       <th>Seo text</th>
       <th>Seo keywords</th>
       <th colspan="3"></th>
@@ -29,7 +29,7 @@
         <td><%= brand.twitter_url %></td>
         <td><%= brand.linkedin_url %></td>
         <td><%= brand.description %></td>
-        <td><%= brand.img %></td>
+        <td><%= brand.imgs %></td>
         <td><%= brand.seo_text %></td>
         <td><%= brand.seo_keywords %></td>
         <td><%= link_to 'Show', brand %></td>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Brand', new_brand_path %>
+<%= link_to 'Ajouter une Marque', new_brand_path, class: "btn btn-success" %>

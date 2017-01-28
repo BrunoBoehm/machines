@@ -90,7 +90,6 @@ Brand.create(name: "Combi")
 Brand.create(name: "Waterjet")
 Brand.create(name: "Bauer")
 Brand.create(name: "Adriatica")
-Brand.create(name: "Combi")
 Brand.create(name: "Mecan Europa")
 
 
