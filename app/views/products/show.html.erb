@@ -29,75 +29,75 @@
   <% end %>
 </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @product.name %><span class="label label-info pull-right"><%= @product.material %></span></h3>
+  </div>
+  <div class="panel-body">
+    <p><strong>Description courte:</strong> <%= @product.short_description %></p>
+  </div>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @product.slug %>
-</p>
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item"><strong>SEO text:</strong> <%= @product.seo_text %></li>
+    <li class="list-group-item"><strong>SEO keywords:</strong> <%= @product.seo_keywords %></li>
+    <li class="list-group-item"><strong>Slug:</strong> <%= @product.slug %></li>
+  </ul>
+</div>
 
-<p>
-  <strong>Imgs:</strong>
-  <%= @product.imgs %>
-</p>
-
-<p>
-  <strong>Short description:</strong>
-  <%= @product.short_description %>
-</p>
 
 <p>
   <strong>Long description:</strong>
-  <%= @product.long_description %>
-</p>
-
-<p>
-  <strong>Material:</strong>
-  <%= @product.material %>
+  <%= @product.long_description.html_safe %>
 </p>
 
 <p>
   <strong>Specs:</strong>
-  <%= @product.specs %>
+  <%= @product.specs.html_safe %>
 </p>
 
-<p>
-  <strong>Options:</strong>
-  <%= @product.options %>
-</p>
+<p><strong>Options:</strong></p>
+<p><%= @product.options %></p>
 
-<p>
-  <strong>Video links:</strong>
-  <%= @product.video_links %>
-</p>
 
-<p>
-  <strong>Tip:</strong>
-  <%= @product.tip %>
-</p>
+<p><strong>Tip:</strong></p>
+<p><%= @product.tip %></p>
 
-<p>
-  <strong>Pdfs:</strong>
-  <%= @product.pdfs %>
-</p>
+<br>
 
-<p>
-  <strong>Seo text:</strong>
-  <%= @product.seo_text %>
-</p>
+<% strip_links(@product.video_links).each do |link| %>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= video_link(link) %>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+<% end %>
 
-<p>
-  <strong>Seo keywords:</strong>
-  <%= @product.seo_keywords %>
-</p>
+<br>
 
-<p>
-  <strong>Links:</strong>
-  <%= @product.links %>
-</p>
+<div class="well well-lg">
+  <p><strong>Links:</strong></p>
+  <ol>
+    <% strip_links(@product.links).each do |link| %>
+      <li><%= link_to link %></li>
+    <% end %>
+  </ol>
+
+  <p><strong>PDFs:</strong></p>
+  <ol>
+    <% strip_links(@product.pdfs).each do |link| %>
+      <li><%= link_to link %></li>
+    <% end %>
+  </ol>
+
+  <p><strong>Videos:</strong></p>
+  <ol>
+    <% strip_links(@product.video_links).each do |link| %>
+      <li><%= link_to link %></li>
+    <% end %>
+  </ol>
+</div>
+
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

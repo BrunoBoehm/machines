@@ -48,17 +48,25 @@
     <%= f.text_area :options, class: "form-control", class: "form-control", rows: "3", placeholder: "Options disponibles pour machine" %>
   </div>
   <div class="input-group">
-    <%= f.label :video_links, class: "input-group-addon" %>
-    <%= f.text_area :video_links, class: "form-control", placeholder: "Liens Youtube, un lien par ligne" %>
-  </div>
-  <div class="input-group">
     <%= f.label :tip, class: "input-group-addon" %>
     <%= f.text_area :tip, class: "form-control", placeholder: "Conseil de Yann et son equipe" %>
   </div>
+
+  <h3>Liens et références:</h3>  
+  <div class="input-group">
+    <%= f.label :video_links, class: "input-group-addon" %>
+    <%= f.text_area :video_links, class: "form-control", placeholder: "Liens Youtube, un lien par ligne" %>
+  </div>
+
   <div class="input-group">
     <%= f.label :pdfs, class: "input-group-addon" %>
-    <%= f.text_field :pdfs, class: "form-control", placeholder: "Virgule entre chaque lien" %>
+    <%= f.text_area :pdfs, class: "form-control", placeholder: "Un lien par ligne vers la documentation du produit" %>
   </div>
+  <div class="input-group">
+    <%= f.label :links, class: "input-group-addon" %>
+    <%= f.text_area :links, class: "form-control", placeholder: "Liens des references pour faire cette fiche machine. Un lien par ligne", rows: "6" %>
+  </div>  
+  <h3>Référencement:</h3>
   <div class="input-group">
     <%= f.label "SEO meta-description", class: "input-group-addon" %>
     <%= f.text_area :seo_text, class: "form-control", placeholder: "Sera defini par Bruno", rows: "3" %>
@@ -67,11 +75,7 @@
     <%= f.label "SEO meta-keywords", class: "input-group-addon" %>
     <%= f.text_field :seo_keywords, class: "form-control", placeholder: "Sera defini par Bruno" %>
   </div>
-  <div class="input-group">
-    <%= f.label :links, class: "input-group-addon" %>
-    <%= f.text_area :links, class: "form-control", placeholder: "Liens des references pour faire cette fiche machine. Un lien par ligne", rows: "6" %>
-  </div>
   <div class="actions">
-    <%= f.submit "Creer fiche machine", class: "btn btn-success" %>
+    <%= f.submit "Sauver Fiche", class: "btn btn-success" %>
   </div>
 <% end %>
