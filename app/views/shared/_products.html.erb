@@ -3,7 +3,9 @@
     <div class="col-md-3">
         <div class="product-blurb">
           <%= image_tag(product.image, class: "img-blurb") %>
+          <% if product.productrange %>
           <h6><%= product.productrange.brand.name %> / <%= product.productrange.name %></h6>
+          <% end  %>
           <h4><%= product.name %></h4>
           <p><%= truncate product.short_description %></p>
           <p><%= link_to "Voir Plus", product_path(product) %></p>
