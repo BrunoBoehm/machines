@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Sub Categories</h1>
+<h1>Toutes les sous-catégories (<%= @sub_categories.count %>)</h1>
 
 <table>
   <thead>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Sub category', new_sub_category_path %>
+<%= link_to 'Ajouter une sous-catégorie', new_sub_category_path, class: "btn btn-success" %>

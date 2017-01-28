@@ -1,4 +1,12 @@
+<h2><%= @product.name %></h2>
 <p id="notice"><%= notice %></p>
+
+<ol class="breadcrumb">
+  <li>Sous Catégorie: <%= link_to @product.productrange.sub_category.name %></li>
+  <li>Marque: <%= link_to @product.productrange.brand.name %></li>
+  <li>Gamme: <%= link_to @product.productrange.name %></li>
+  <li class="active"><%= @product.name %></li>
+</ol>
 
 <p>
   <strong>Name:</strong>
