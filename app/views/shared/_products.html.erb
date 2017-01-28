@@ -1,14 +1,26 @@
+<div class="alert alert-info" role="alert">
+  <p>Nombre de machines: <%= products.count %> | Avancement général: <%= (products.map{ |x| completion(x) }.sum / products.count) %>%</p>
+</div>
 <div class="row text-center">
   <% products.each do |product| %>
     <div class="col-md-3">
         <div class="product-blurb">
-          <%= image_tag(product.image, class: "img-blurb") %>
+          <%= image_tag(image(product), class: "img-blurb") %>
           <% if product.productrange %>
-          <h6><%= product.productrange.brand.name %> / <%= product.productrange.name %></h6>
+          <h5><span class="label label-info"><%= product.productrange.brand.name %></span></h5>
+          <h6><%= product.productrange.name %></h6>
           <% end  %>
           <h4><%= product.name %></h4>
           <p><%= truncate product.short_description %></p>
-          <p><%= link_to "Voir Plus", product_path(product) %></p>
+          <p><span class="label label-<%= completion_state(product) %>"><%= completion(product) %>% Complet</span></p>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <%= link_to "Voir", product_path(product) %>
+            </button>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <%= link_to "Edit", edit_product_path(product) %>
+            </button>            
+          </div>
         </div>
     </div>
   <% end %>
