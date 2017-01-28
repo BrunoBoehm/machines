@@ -69,6 +69,6 @@ class SubCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sub_category_params
-      params.require(:sub_category).permit(:name, :slug, :description, :seo_text, :seo_keywords)
+      params.require(:sub_category).permit(:name, :slug, :description, :seo_text, :seo_keywords, :category_id)
     end
 end

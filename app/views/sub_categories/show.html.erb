@@ -1,7 +1,19 @@
 <p id="notice"><%= notice %></p>
+<h2><%= @sub_category.name %></h2>
+
+<ol class="breadcrumb">
+  <li>Categorie: <%= link_to @sub_category.category.name %></li>
+  <li>Sous-Categorie: <%= link_to @sub_category.name %></li>
+</ol>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Category Name:</strong>
+  <%= @sub_category.category.name %>
+</p>
+
+
+<p>
+  <strong>Sub Category Name:</strong>
   <%= @sub_category.name %>
 </p>
 
@@ -27,3 +39,14 @@
 
 <%= link_to 'Edit', edit_sub_category_path(@sub_category) %> |
 <%= link_to 'Back', sub_categories_path %>
+
+<br>
+<hr>
+<h2>Toutes les machines pour "<%= @sub_category.category.name %> / <%= @sub_category.name %>"</h2>
+<ol>
+  <% @sub_category.productranges.each do |range| %>
+    <li><%= range.name %></li>
+  <% end %>
+</ol>
+
+<%= render partial: 'shared/products', locals: { products: @sub_category.productranges.map(&:products) } %>

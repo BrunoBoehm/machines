@@ -1,8 +1,24 @@
 <p id="notice"><%= notice %></p>
+<h2><%= @productrange.name %></h2>
+<ol class="breadcrumb">
+  <li>Sous-catégorie: <%= link_to @productrange.sub_category.try(:name) %></li>
+  <li>Marque: <%= link_to @productrange.brand.try(:name) %></li>
+  <li>Gamme: <%= link_to @productrange.name %></li>
+</ol>
 
 <p>
   <strong>Name:</strong>
   <%= @productrange.name %>
+</p>
+
+<p>
+  <strong>Marque:</strong>
+  <%= @productrange.brand.try(:name) %>
+</p>
+
+<p>
+  <strong>Sous-catégorie:</strong>
+  <%= @productrange.sub_category.try(:name) %>
 </p>
 
 <p>
@@ -32,3 +48,8 @@
 
 <%= link_to 'Edit', edit_productrange_path(@productrange) %> |
 <%= link_to 'Back', productranges_path %>
+
+<br>
+<hr>
+<h2>Toutes les machines de "<%= @productrange.sub_category.try(:name) %> / <%= @productrange.brand.try(:name) %> / <%= @productrange.name %>"</h2>
+<%= render partial: 'shared/products', locals: {products: @productrange.products} %>

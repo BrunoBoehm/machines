@@ -69,6 +69,6 @@ class ProductrangesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def productrange_params
-      params.require(:productrange).permit(:name, :slug, :description, :imgs, :seo_text, :seo_keywords)
+      params.require(:productrange).permit(:name, :slug, :description, :imgs, :seo_text, :seo_keywords, :brand_id, :sub_category_id)
     end
 end

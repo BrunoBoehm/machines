@@ -18,7 +18,11 @@
   <div class="field">
     <p>Quelle sous-catégorie ?</p>
     <%= f.collection_select :sub_category_id, SubCategory.order(:name), :id, :name, include_blank: "Choisir sous-catégorie" %>
-  </div>  
+  </div> 
+  <div class="field">
+    <p>Quelle marque ?</p>
+    <%= f.collection_select :brand_id, Brand.order(:name), :id, :name, include_blank: "Choisir marque" %>
+  </div>     
   <div class="field">
     <%= f.label :slug %><br>
     <%= f.text_field :slug %>
